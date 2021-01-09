@@ -1,0 +1,159 @@
+
+  1. Search Passenger Name Where Id = 101
+
+   SELECT Name
+   From Passangere Profile
+   Where Id = 101;
+
+  2. Search Total Seat in Flight Table
+    Select fTotal_Seat
+    From flight;
+  
+   3. Example of ALTER table:
+      ALTER TABLE FARE ADD (CHECKING VARCHAR(25), CONSTRAINT FK
+      FOREIGN KEY(CHECKING) REFERENCES AIRPORT(fAIRLINE_ID));
+
+   4.  Example of Dropping constraints and columns:
+       ALTER TABLE FARE DROP CONSTRAINT FK;
+       ALTER TABLE FARE DROP COLUMN CHECKING;
+    
+    5. Example Drop any Table
+      Drop Table flight_details;
+  
+    6. Example of UNION operation
+       Select Pprofile_Id,PName,Paddress,Pemail
+       From passenger_profile
+       UNION 
+       Select tprofile_Id,tTicket_id,tFlight_id,tFlight_departure_date 
+       From Ticket_info;
+
+    7. Example of UNION All operation
+       Select Pprofile_Id,PName,Paddress,Pemail
+       From passenger_profile
+       UNION All
+       Select tprofile_Id,tTicket_id,tFlight_id,tFlight_departure_date 
+       From Ticket_info;
+
+
+     
+    8. Example Of Join Operation
+       Select fFlight_id ,fAirline_id , fAirline_Name , dFlight_depature_date, dAvaliable_seat,dPrice
+       From flight Join flight_details
+       ON fFlight_id =  dFlight_id;
+
+    9. Example Of Inner Join Operation
+       Select fFlight_id ,fAirline_id , fAirline_Name , dFlight_depature_date, dAvaliable_seat,dPrice
+       From flight Inner Join flight_details
+       ON fFlight_id =  dFlight_id;
+    
+    10. Example Of Left Join Operation
+
+      Select fFlight_id ,fAirline_id , fAirline_Name , dFlight_depature_date, dAvaliable_seat,dPrice
+       From flight Left Join flight_details
+       ON fFlight_id =  dFlight_id;
+
+    11. Example Of Right Join Operation
+
+      Select fFlight_id ,fAirline_id , fAirline_Name , dFlight_depature_date, dAvaliable_seat,dPrice
+       From flight Right Join flight_details
+       ON fFlight_id =  dFlight_id;
+       
+    12. TRUNCATE TABLE Command
+       TRUNCATE TABLE flight_details;
+
+    13.  UPDATE Statement
+         UPDATE flight_details
+         SET dPrice = 320$
+         Where flight_id = 102;
+   
+    14. DELETE Statement
+        DELETE passenger_profile
+        WHERE ID = 2124
+
+    15. AS Keyword
+       SELECT ID AS Roll
+       From Passenger_Profile;
+
+    16. LIKE Operator
+        Select * 
+        From passanger_profile
+        Where Name LIKE 'S%';
+
+    17. OR Operator
+        Select *
+        From Passenger_profile
+        Where Gender = 'Male' OR City = 'Dhaka';
+     
+     18. AND Operator 
+        Select *
+        From Passenger_profile
+        Where Gender = 'Male' AND  City = 'Dhaka';
+     
+     19. IN Operator 
+        Select *
+        From Passenger_profile
+        Where City IN ('Dhaka','Nepal');
+
+     20. NOT IN Operator 
+        Select *
+        From Passenger_profile
+        Where City NOT IN ('Dhaka','Nepal');
+
+     21. DISTINCT Keyword
+         SELECT DISTINCT City
+         From Passenger_Profile;
+
+     22. LIMIT Keyword 
+         SELECT *
+         From credit_card_details
+         LIMIT 3;
+
+     23. Create Table Clause
+
+         CREATE TABLE credit_card_details(
+         cProfile_id NUMBER(20),
+         cCard_number NUMBER(30),
+         cCard_type varchar(30),
+         cExpiration_month varchar(30),
+         cExpiration_year varchar(30),    
+         FOREIGN KEY (cProfile_id) REFERENCES passenger_profile (Pprofile_id) ON DELETE CASCADE
+         );
+   
+       24. RENAME Clause
+           RENAME credit_card_details TO credit_card;
+
+       25. SELECT Clause
+           Select *
+           From credit_card_details;
+
+        26. Describe Clause
+            Describe Passanger_profile;
+        
+         27. WHERE Clause
+             Select Name 
+             From Passneger_Profile
+             Where Id  = 2114;
+        
+         28. INSERT Clause
+             INSERT INTO credit_card_details VALUES (2124,012556284,'DBBL','December','2040');
+             INSERT INTO credit_card_details VALUES (2194,013556280,'DBBL','December','2037');
+             INSERT INTO credit_card_details VALUES (2114,013567834,'VISA','July','2040');
+             INSERT INTO credit_card_details VALUES (2109,01556294,'EBBL','June','2035');
+             INSERT INTO credit_card_details VALUES (2121,014556274,'EBBL','December','2040');
+          
+        29. Show All details From Flight_details
+            Select *
+            From Flight_details;
+
+        30. Show All details From Ticket_info Where Price is gatter than 250$
+            Select *
+            From Ticket_info
+            Where Price>250$;
+
+
+
+
+
+        
+
+
